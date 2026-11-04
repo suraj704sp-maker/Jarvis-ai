@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">JARVIS AI</string>
+    <string name="accessibility_service_description">JARVIS AI Accessibility Service allows your voice assistant to execute back gestures, scroll up/down, type dictated text, and lock phone screen when requested.</string>
+</resources>

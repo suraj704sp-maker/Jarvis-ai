@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Outer Glow Ring -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2"
+        android:pathData="M100,10 A90,90 0 1,1 99.9,10 Z" />
+    <path
+        android:strokeColor="#0284C7"
+        android:strokeWidth="4"
+        android:strokeDasharray="16,8"
+        android:pathData="M100,20 A80,80 0 1,1 99.9,20 Z" />
+    <!-- Segmented Inner Ring -->
+    <path
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="3"
+        android:strokeDasharray="24,12"
+        android:pathData="M100,35 A65,65 0 1,1 99.9,35 Z" />
+    <!-- Core Ring -->
+    <path
+        android:fillColor="#0C1427"
+        android:strokeColor="#00FFCC"
+        android:strokeWidth="2.5"
+        android:pathData="M100,55 A45,45 0 1,1 99.9,55 Z" />
+    <!-- Arc Center Core Triangle -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3"
+        android:pathData="M100,68 L126,118 L74,118 Z" />
+    <!-- Central Power Bead -->
+    <path
+        android:fillColor="#00FFCC"
+        android:pathData="M100,90 A10,10 0 1,1 99.9,90 Z" />
+</vector>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#030712"
+    android:padding="16dp">
+
+    <!-- Top Status Header -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="J.A.R.V.I.S."
+        android:textColor="#38BDF8"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDeviceModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REDMI 12C // ANDROID 14"
+        android:textColor="#0284C7"
+        android:textSize="11sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JARVIS ONLINE"
+        android:textColor="#00FFCC"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:background="#1500FFCC"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Iron Man Motivational Affirmation HUD Box -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardAffirmation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0C1427"
+        app:strokeColor="#38BDF8"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvDeviceModel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ JARVIS PROTOCOL // DAILY AFFIRMATION"
+                android:textColor="#38BDF8"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDailyAffirmation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="सर, कभी-कभी आपको दौड़ने से पहले सीधे उड़ना पड़ता है।"
+                android:textColor="#E0F2FE"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvAffirmationSpeaker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="— Tony Stark (टैप करके सुनें)"
+                android:textColor="#00FFCC"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Center Arc Reactor Graphic -->
+    <ImageView
+        android:id="@+id/ivArcReactor"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_arc_reactor"
+        android:contentDescription="Arc Reactor Core"
+        app:layout_constraintTop_toBottomOf="@id/cardAffirmation"
+        app:layout_constraintBottom_toTopOf="@id/cardTranscript"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:progressTint="#38BDF8"
+        app:layout_constraintTop_toBottomOf="@id/ivArcReactor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Transcript and Jarvis Reply Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTranscript"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#0C1427"
+        app:strokeColor="#1E3A5F"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="14dp"
+        app:contentPadding="14dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/quickCommandsScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTranscript"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="बोलने के लिए माइक बटन दबाएं..."
+                android:textColor="#94A3B8"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1E293B"
+                android:layout_marginVertical="8dp" />
+
+            <TextView
+                android:id="@+id/tvJarvisReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="नमस्ते सर, मैं जार्विस हूँ। मैं आपके Redmi 12C पर पूरी तरह सक्रिय हूँ।"
+                android:textColor="#E0F2FE"
+                android:textSize="15sp"
+                android:lineSpacingExtra="3dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Quick Command Chips Horizontal Scroll -->
+    <HorizontalScrollView
+        android:id="@+id/quickCommandsScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/btnMic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/chipYoutube"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="YouTube खोलें"
+                android:textColor="#38BDF8"
+                app:strokeColor="#0284C7"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/chipWhatsapp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="WhatsApp खोलें"
+                android:textColor="#38BDF8"
+                app:strokeColor="#0284C7"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/chipTime"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="समय बताओ"
+                android:textColor="#38BDF8"
+                app:strokeColor="#0284C7"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/chipScrollDown"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="नीचे स्क्रॉल"
+                android:textColor="#38BDF8"
+                app:strokeColor="#0284C7"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/chipBack"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="पीछे जाओ"
+                android:textColor="#38BDF8"
+                app:strokeColor="#0284C7"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btnAccessibility"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:text="⚙️ अनुमति सेटिंग्स"
+                android:textColor="#F59E0B" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Glowing Futuristic Mic Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnMic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Voice Command Mic"
+        android:src="@android:drawable/ic_btn_speak_now"
+        app:backgroundTint="#0284C7"
+        app:tint="#FFFFFF"
+        app:fabCustomSize="72dp"
+        app:maxImageSize="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
